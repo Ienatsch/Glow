@@ -1,0 +1,10 @@
+.navContainer {
+    background-color: #3bf8ff;
+    
+    /* For side-by-side display in large view */
+    display: inline-block;
+
+    @media only screen and (min-width: 992px) {
+        height: 100%;
+    }
+}
