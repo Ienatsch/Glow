@@ -1,4 +1,14 @@
+#mainContainer {
+    height: 100%;
+}
+
 /* For side-by-side display in large view */
 .routerPageContainer {
-    display: inline-block;
+    display: inline-flex;
+    height: 100%;
+    min-width: 90%;
+    
+    h1 {
+        align-content: center;
+    }
 }

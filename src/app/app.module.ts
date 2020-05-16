@@ -11,9 +11,11 @@ import { AppRoutingModule } from './app-routing.module';
 import { EventsComponent } from './events/events.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import {FormsModule} from '@angular/forms';
-import { AddTimeModalComponent } from './modals/add-time-modal/add-time-modal.component';
-import { EditTimeModalComponent } from './modals/edit-time-modal/edit-time-modal.component';
 import { DeleteModalComponent } from './modals/delete-modal/delete-modal.component';
+import { AddFeedingModalComponent } from './modals/add-feeding-modal/add-feeding-modal.component';
+import { EditFeedingModalComponent } from './modals/edit-feeding-modal/edit-feeding-modal.component';
+import { FeedingItemComponent } from './feeding/feeding-item/feeding-item.component';
+import { FeedingListComponent } from './feeding/feeding-list/feeding-list.component';
 
 @NgModule({
   declarations: [
@@ -24,9 +26,11 @@ import { DeleteModalComponent } from './modals/delete-modal/delete-modal.compone
     ShotRecordsComponent,
     MeasurablesComponent,
     EventsComponent,
-    AddTimeModalComponent,
-    EditTimeModalComponent,
     DeleteModalComponent,
+    AddFeedingModalComponent,
+    EditFeedingModalComponent,
+    FeedingItemComponent,
+    FeedingListComponent,
   ],
   imports: [
     BrowserModule,

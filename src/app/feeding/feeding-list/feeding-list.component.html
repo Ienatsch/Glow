@@ -1,0 +1,12 @@
+<div class="feedingListHeader">
+    <p>Date</p>
+    <p>Time</p>
+    <p>Amount (oz)</p>
+    <p>Time Passed</p>
+</div>
+<div class="feedingItemList">
+    <div *ngFor="let feeding of feedings; index as i;"
+    [class.oddItems]="i % 2 === 0" [class.evenItems]="i % 2 !== 0">
+        <glow-feeding-item class="feedingItem" [feeding]="feeding"></glow-feeding-item>
+    </div>
+</div>
