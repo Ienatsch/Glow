@@ -16,12 +16,16 @@
         </div>
         <div class="ouncesFed">
             <h5>Amount (oz)</h5>
-            <input type="text">
+            <input type="text" class="mt-4 mb-n3">
+            <br />
+            <button type="button" class="btn btn-danger" data-toggle="button" aria-pressed="false" autocomplete="off">
+                Breastfed
+            </button>
         </div>
     </div>
     <div class="modal-footer">
-        <button type="button" class="btn btn-light" (click)="modal.close('saved')">Save</button>
-        <button type="button" class="btn btn-light" (click)="modal.close()">Close</button>
+        <button type="button" class="btn btn-outline-success" (click)="modal.close('saved')">Save</button>
+        <button type="button" class="btn btn-outline-danger" (click)="modal.close()">Close</button>
     </div>
   </ng-template>
-  <button class="btn btn-outline-primary mb-2 mr-2" (click)="openModal(content)">Add New</button>
+  <button class="btn btn-outline-success mb-2 mr-2" (click)="openModal(content)">Add New</button>

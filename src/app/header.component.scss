@@ -3,7 +3,7 @@
 .navContainer {
     background-color: $mainBlue;
 
-    @media only screen and (min-width: 992px) {
+    @media only screen and (min-width: $screenSm) {
         height: 100%;
         min-width: 10%;
         /* For side-by-side display in large view */

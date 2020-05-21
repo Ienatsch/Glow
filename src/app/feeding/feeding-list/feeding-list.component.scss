@@ -12,13 +12,26 @@
 .feedingItem, .feedingListHeader{
     display: flex;
     flex-direction: row;
-    padding: 20px;
     justify-content: space-around;
 
     p {
         width: 25%;
+        padding: 20px;
         text-align: center;
+
+        &:not(:last-of-type) {
+            border-right: 1px solid black;
+        }
     }
+}
+
+.feedingListHeader {
+    background-color: $mainBlue;
+    border: 1px solid black;
+}
+
+.lastItem {
+    border-bottom: 1px solid black;
 }
 
 .evenItems {
@@ -26,5 +39,5 @@
 }
 
 .oddItems {
-    background-color: rgb(148, 223, 248);
+    background-color: rgb(255, 255, 255);
 }

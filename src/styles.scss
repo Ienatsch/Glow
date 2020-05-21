@@ -1,18 +1,27 @@
-/* You can add global styles to this file, and also import other style files */
-$mainBlue: #3bf8ff;
+@import "app/variables";
 
+/* You can add global styles to this file, and also import other style files */
 * {
     box-sizing: border-box;
+    font-family: $paragraphFont;
 }
 
 body {
     height: 100vh;
+    font-family: $paragraphFont;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: $headingFont;
 }
 
 h1 {
     width: 100%;
     text-align: center;
 }
+
+/* Importing Bootstrap SCSS file. */
+@import '~bootstrap/scss/bootstrap';
 
 /* Importing Bootstrap SCSS file. */
 @import '~bootstrap/scss/bootstrap';
