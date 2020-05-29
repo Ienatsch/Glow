@@ -15,7 +15,7 @@ export class FeedingComponent implements OnInit  {
     private apiEndpointsService: ApiEndpointsService) { }
 
   ngOnInit() {
-    this.apiHttpService.get(this.apiEndpointsService.getValuesEndpoint()).subscribe((result) => {
+    this.apiHttpService.get(this.apiEndpointsService.getUserEndpoint()).subscribe((result) => {
       console.log(result);
     });
   }

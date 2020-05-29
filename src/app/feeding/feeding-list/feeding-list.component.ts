@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Feeding } from '../feeding.model';
+import { Feeding } from '../../models/feeding.model';
 
 @Component({
   selector: 'glow-feeding-list',
