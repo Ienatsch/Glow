@@ -1,0 +1,58 @@
+<div class="card">
+    <h4 class="card-header">Register</h4>
+    <div class="card-body">
+        <form [formGroup]="form" (ngSubmit)="onSubmit()">
+            <div class="form-group">
+                <label for="userFirstName">First Name</label>
+                <input type="text" formControlName="userFirstName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.userFirstName.errors }" />
+                <div *ngIf="submitted && f.userFirstName.errors" class="invalid-feedback">
+                    <div *ngIf="f.userFirstName.errors.required">First Name is required</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="userLastName">Last Name</label>
+                <input type="text" formControlName="userLastName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.userLastName.errors }" />
+                <div *ngIf="submitted && f.userLastName.errors" class="invalid-feedback">
+                    <div *ngIf="f.userLastName.errors.required">Last Name is required</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="userUsername">Username</label>
+                <input type="text" formControlName="userUsername" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.userUsername.errors }" />
+                <div *ngIf="submitted && f.userUsername.errors" class="invalid-feedback">
+                    <div *ngIf="f.userUsername.errors.required">Username is required</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="userPassword">Password</label>
+                <input type="password" formControlName="userPassword" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.userPassword.errors }" />
+                <div *ngIf="submitted && f.userPassword.errors" class="invalid-feedback">
+                    <div *ngIf="f.userPassword.errors.required">Password is required</div>
+                    <div *ngIf="f.userPassword.errors.minlength">Password must be at least 6 characters</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="userEmail">Email Address</label>
+                <input type="email" formControlName="userEmail" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.userEmail.errors }" />
+                <div *ngIf="submitted && f.userEmail.errors" class="invalid-feedback">
+                    <div *ngIf="f.userEmail.errors.required">Email address is required</div>
+                    <div *ngIf="f.userEmail.errors.email">Please enter a valid email address</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="userPhoneNumber">Phone Number</label>
+                <input type="tel" formControlName="userPhoneNumber" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.userPhoneNumber.errors }" />
+                <div *ngIf="submitted && f.userPhoneNumber.errors" class="invalid-feedback">
+                    <div *ngIf="f.userPhoneNumber.errors.pattern">Please enter a valid phone number</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <button [disabled]="loading" class="btn btn-primary">
+                    <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+                    Register
+                </button>
+                <a routerLink="../glow-account-login" class="btn btn-link">Cancel</a>
+            </div>
+        </form>
+    </div>
+</div>

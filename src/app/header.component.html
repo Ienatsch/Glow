@@ -12,9 +12,12 @@
                     Account
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                    <a class="dropdown-item" href="#">View</a>
+                    <!-- <a class="dropdown-item" href="#">View</a>
                     <a class="dropdown-item" href="#">Edit</a>
-                    <a class="dropdown-item" href="#">*Login/Logout*</a>
+                    <a class="dropdown-item" href="#">*Login/Logout*</a> -->
+                    <a class="dropdown-item" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Home</a>
+                    <a class="dropdown-item" routerLink="/users" routerLinkActive="active">Users</a>
+                    <a class="dropdown-item" (click)="logout()">Logout</a>
                 </div>
             </div>
         </div>

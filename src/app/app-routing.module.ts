@@ -5,13 +5,21 @@ import { SleepComponent } from './sleep/sleep.component';
 import { MeasurablesComponent } from './measurables/measurables.component';
 import { ShotRecordsComponent } from './shot-records/shot-records.component';
 import { EventsComponent } from './events/events.component';
+import { AccountHomeComponent } from './account/home/account-home.component';
+import { AuthGuard } from './helpers/auth.guard';
+
+const accountModule = () => import('./account/account.module').then(x => x.AccountModule);
+const usersModule = () => import('./account/users/users.module').then(x => x.UsersModule);
 
 const routes: Routes = [
-  { path: 'glow-feeding', component: FeedingComponent },
-  { path: 'glow-sleep', component: SleepComponent },
-  { path: 'glow-measurables', component: MeasurablesComponent },
-  { path: 'glow-shot-records', component: ShotRecordsComponent },
-  { path: 'glow-events', component: EventsComponent },
+  { path: '', component: AccountHomeComponent, canActivate: [AuthGuard] },
+  { path: 'glow-users', loadChildren: usersModule, canActivate: [AuthGuard] },
+  { path: 'glow-account', loadChildren: accountModule, canActivate: [AuthGuard] },
+  { path: 'glow-feeding', component: FeedingComponent,  canActivate: [AuthGuard] },
+  { path: 'glow-sleep', component: SleepComponent,  canActivate: [AuthGuard] },
+  { path: 'glow-measurables', component: MeasurablesComponent,  canActivate: [AuthGuard] },
+  { path: 'glow-shot-records', component: ShotRecordsComponent,  canActivate: [AuthGuard] },
+  { path: 'glow-events', component: EventsComponent,  canActivate: [AuthGuard] },
 ];
 
 @NgModule({

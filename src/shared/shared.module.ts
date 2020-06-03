@@ -15,9 +15,12 @@ import { FeedingItemComponent } from 'src/app/feeding/feeding-item/feeding-item.
 import { FeedingListComponent } from 'src/app/feeding/feeding-list/feeding-list.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule } from '@angular/forms';
+import { AccountLayoutComponent } from 'src/app/account/account-layout.component';
+import { AccountModule } from 'src/app/account/account.module';
+import { UsersModule } from 'src/app/account/users/users.module';
 
 @NgModule({
-  imports: [CommonModule, RouterModule, HttpClientModule, NgbModule, FormsModule],
+  imports: [CommonModule, RouterModule, HttpClientModule, NgbModule, FormsModule, AccountModule, UsersModule],
   exports: [
     CommonModule,
     RouterModule,
@@ -33,6 +36,8 @@ import { FormsModule } from '@angular/forms';
     EditFeedingModalComponent,
     FeedingItemComponent,
     FeedingListComponent,
+    AccountModule,
+    UsersModule
 
   ],
   declarations: [

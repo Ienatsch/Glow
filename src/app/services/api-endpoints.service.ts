@@ -58,7 +58,7 @@ export class ApiEndpointsService {
   }
   /* #endregion */
 
-  public getValuesEndpoint(): string {
-    return this.createUrl('');
+  public getUserEndpoint(): string {
+    return this.createUrl('user');
   }
 }
