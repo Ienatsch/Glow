@@ -14,13 +14,16 @@ import { EditFeedingModalComponent } from 'src/app/modals/edit-feeding-modal/edi
 import { FeedingItemComponent } from 'src/app/feeding/feeding-item/feeding-item.component';
 import { FeedingListComponent } from 'src/app/feeding/feeding-list/feeding-list.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AccountLayoutComponent } from 'src/app/account/account-layout.component';
 import { AccountModule } from 'src/app/account/account.module';
 import { UsersModule } from 'src/app/account/users/users.module';
+import { NgbdDatepickerPopup } from 'src/app/helpers/ngbd-datepicker-popup/ngbd-datepicker-popup.component';
+import { MatIconModule } from '@angular/material/icon';
+import { AddEditChildModalComponent } from 'src/app/modals/child/add-edit-child-modal.component';
 
 @NgModule({
-  imports: [CommonModule, RouterModule, HttpClientModule, NgbModule, FormsModule, AccountModule, UsersModule],
+  imports: [CommonModule, RouterModule, HttpClientModule, NgbModule, FormsModule, AccountModule, UsersModule, MatIconModule, ReactiveFormsModule],
   exports: [
     CommonModule,
     RouterModule,
@@ -37,7 +40,10 @@ import { UsersModule } from 'src/app/account/users/users.module';
     FeedingItemComponent,
     FeedingListComponent,
     AccountModule,
-    UsersModule
+    UsersModule,
+    NgbdDatepickerPopup,
+    MatIconModule,
+    AddEditChildModalComponent
 
   ],
   declarations: [
@@ -52,6 +58,8 @@ import { UsersModule } from 'src/app/account/users/users.module';
     EditFeedingModalComponent,
     FeedingItemComponent,
     FeedingListComponent,
+    NgbdDatepickerPopup,
+    AddEditChildModalComponent
   ]
 })
 export class SharedModule {}
