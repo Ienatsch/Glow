@@ -1,5 +1,7 @@
 import { Component, ViewEncapsulation } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { FeedingService } from 'src/app/services/feeding.service';
+import { Feeding } from 'src/app/models/feeding.model';
 
 @Component({
   selector: 'glow-add-feeding-modal',
@@ -13,20 +15,30 @@ export class AddFeedingModalComponent {
   meridian = true;
   closeResult: string;
 
-  constructor(private modalService: NgbModal) { }
+  constructor(private modalService: NgbModal, private feedingService: FeedingService) { }
 
   openModal(content) {
     this.modalService.open(content, {size: 'lg', centered: true, ariaLabelledBy: 'add-feeding-modal'}).result.then((result) => {
       if (result == "saved") {
-        this.saveFeedingModal();
+        var feeding: Feeding = {
+          childId: "",
+          feedingId: "",
+          feedingDate: "",
+          feedingStartTime: "",
+          feedingEndTime: "",
+          oz: 2,
+          timeSinceLastFeed: "",
+          
+        }
+        this.saveFeedingModal(feeding);
       }
     }, (reason) => {
       this.closeResult = `Dismissed`;
     });
   }
 
-  saveFeedingModal() {
-    
+  saveFeedingModal(feeding: Feeding) {
+    this.feedingService.addFeeding(feeding);
   }
 
 }

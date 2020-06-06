@@ -1,14 +1,18 @@
 export class Feeding {
+    public childId: string;
     public feedingId: string;
     public feedingDate: string;
-    public feedingTime: string;
+    public feedingStartTime: string;
+    public feedingEndTime: string;
     public oz: number;
     public timeSinceLastFeed: string;
 
-    constructor(feedingId, date, time, oz, timeSinceLastFeed) {
-        this.feedingId = feedingId
+    constructor(childId, feedingId, date, startTime, endTime, oz, timeSinceLastFeed) {
+        this.childId = childId;
+        this.feedingId = feedingId;
         this.feedingDate = date;
-        this.feedingTime = time;
+        this.feedingStartTime = startTime;
+        this.feedingEndTime = endTime,
         this.oz = oz;
         this.timeSinceLastFeed = timeSinceLastFeed;
     }
