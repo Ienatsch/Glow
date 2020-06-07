@@ -1,6 +1,6 @@
 <ng-template #content let-modal>
     <div class="modal-header">
-      <h4 class="modal-title">Add/Edit Child</h4>
+      <h4 class="modal-title">{{ title }} Child</h4>
       <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
         <span aria-hidden="true">&times;</span>
       </button>
@@ -24,7 +24,13 @@
               Height:
               <input type="text" formControlName="height"><span>(in)</span>
             </label>
-          
+            <label>
+              Gender:
+              <select formControlName="gender">
+                <option value="m">Male</option>
+                <option value="f">Female</option>
+                </select>
+            </label>
           </form>
     </div>
     <div class="modal-footer">
@@ -32,4 +38,4 @@
         <button type="button" class="btn btn-outline-danger" (click)="modal.close()">Close</button>
     </div>
   </ng-template>
-  <button class="btn btn-outline-success mb-2 mr-2" (click)="openModal(content)">Add New</button>
+  <button class="btn btn-outline-success mb-2 mr-2" (click)="openModal(content, 'Add New')">Add New</button>

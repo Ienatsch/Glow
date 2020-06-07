@@ -7,4 +7,5 @@ export class Child {
     childHeightType: string;
     childWeight: number;
     childWeightType: string;
+    childGender: string;
 };

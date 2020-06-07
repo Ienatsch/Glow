@@ -2,7 +2,7 @@ import { Component, ViewEncapsulation } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ChildService } from 'src/app/services/child.service';
 import { Child } from 'src/app/models/child.model';
-import { FormGroup, FormControl, FormBuilder } from '@angular/forms';
+import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms';
 import { AccountService } from 'src/app/services/account.service';
 import { User } from 'src/app/models/user.model';
 
@@ -14,31 +14,35 @@ import { User } from 'src/app/models/user.model';
 })
 export class AddEditChildModalComponent {
   user: User;
+  title: string;
   closeResult: string;
   addEditChildForm = this.formBuilder.group({
     firstName: '',
     lastName: '',
     birthDate: new Date(),
     height: 0,
-    weight: 0
+    weight: 0,
+    gender: ["", Validators.required]
   });
 
   constructor(private modalService: NgbModal, private childService: ChildService, private accountService: AccountService, private formBuilder: FormBuilder) {
     this.user = this.accountService.userValue;
    }
 
-  openModal(content) {
-    this.modalService.open(content, {size: 'lg', centered: true, ariaLabelledBy: 'add-edit-child-modal'}).result.then((result) => {
+  openModal(content, title) {
+    this.title = title;
+    this.modalService.open(content, {size: 'md', centered: true, ariaLabelledBy: 'add-edit-child-modal'}).result.then((result) => {
       if (result == "saved") {
         var child: Child = {
-          childId: "",
+          childId: null,
           userId: this.user.userId,
           childFirstName: this.addEditChildForm.get('firstName').value,
           childBirthDate: this.addEditChildForm.get('birthDate').value,
-          childHeight: this.addEditChildForm.get('height').value,
+          childHeight: parseInt(this.addEditChildForm.get('height').value),
           childHeightType: "in",
-          childWeight: this.addEditChildForm.get('weight').value,
-          childWeightType: "lb"
+          childWeight: parseInt(this.addEditChildForm.get('weight').value),
+          childWeightType: "lb",
+          childGender: this.addEditChildForm.get('gender').value
         }
         this.saveChildModal(child);
       }
