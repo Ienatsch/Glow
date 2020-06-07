@@ -8,7 +8,6 @@ import { ApiHttpService } from '../services/api-http.service';
   styleUrls: ['./feeding.component.scss']
 })
 export class FeedingComponent implements OnInit  {
-  
 
   constructor(
     private apiHttpService: ApiHttpService,
@@ -16,7 +15,7 @@ export class FeedingComponent implements OnInit  {
 
   ngOnInit() {
     this.apiHttpService.get(this.apiEndpointsService.getUserEndpoint()).subscribe((result) => {
-      console.log(result);
+      
     });
   }
 

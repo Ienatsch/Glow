@@ -1,10 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
-
-import { environment } from '../../environments/environment';
 import { User } from '../models/user.model';
 import { Constants } from '../../config/constants';
 
@@ -14,10 +12,7 @@ export class AccountService {
     public user: Observable<User>;
     public constants: Constants;
 
-    constructor(
-        private router: Router,
-        private http: HttpClient
-    ) {
+    constructor(private router: Router, private http: HttpClient) {
         this.userSubject = new BehaviorSubject<User>(JSON.parse(localStorage.getItem('user')));
         this.user = this.userSubject.asObservable();
         this.constants = new Constants();        

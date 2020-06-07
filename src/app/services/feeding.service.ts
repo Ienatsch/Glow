@@ -1,8 +1,6 @@
 import { Injectable } from '@angular/core';
-import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
-import { BehaviorSubject, Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { Observable } from 'rxjs';
 import { Constants } from '../../config/constants';
 import { Feeding } from '../models/feeding.model';
 import { Child } from '../models/child.model';
@@ -12,10 +10,7 @@ export class FeedingService {
     public child: Observable<Child>;
     public constants: Constants;
 
-    constructor(
-        private router: Router,
-        private http: HttpClient
-    ) {
+    constructor(private http: HttpClient) {
         this.constants = new Constants();        
     }
 
@@ -31,14 +26,11 @@ export class FeedingService {
         return this.http.get<Feeding>(`${this.constants.API_ENDPOINT}/feeding/${id}`);
     }
 
-    // delete(id: string) {
-    //     return this.http.delete(`${this.constants.API_ENDPOINT}/feeding/${id}`)
-    //         .pipe(map(x => {
-    //             // auto logout if the logged in user deleted their own record
-    //             if (id == this.userId.userId) {
-    //                 this.logout();
-    //             }
-    //             return x;
-    //         }));
-    // }
+    delete(feedingId: string) {
+        return this.http.delete(`${this.constants.API_ENDPOINT}/feeding/${feedingId}`).subscribe(
+            res => console.log(res),
+            err => console.log("Error deleting feeding"),
+            () => console.log("Successfully deleted feeding")
+        )
+    }
 }

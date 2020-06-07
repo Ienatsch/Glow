@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-
 import { AccountLayoutComponent } from './account-layout.component';
 import { AccountLoginComponent } from './login/account-login.component';
 import { AccountRegisterComponent } from './register/account-register.component';

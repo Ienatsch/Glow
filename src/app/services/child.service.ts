@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Constants } from '../../config/constants';
@@ -10,12 +9,9 @@ import { AccountService } from './account.service';
 export class ChildService {
     public child: Observable<Child>;
     public constants: Constants;
+    public activeChild: 1;
 
-    constructor(
-        private router: Router,
-        private http: HttpClient,
-        private accountService: AccountService
-    ) {
+    constructor(private http: HttpClient, private accountService: AccountService) {
         this.constants = new Constants();        
     }
 
@@ -25,21 +21,27 @@ export class ChildService {
     }
 
     addChild(child: Child) {
-        return this.http.post(`${this.constants.API_ENDPOINT}/Child/AddChild`, child );
+        this.http.post(`${this.constants.API_ENDPOINT}/child/AddChild`, child ).subscribe(
+            res => console.log(res),
+            err => console.log("Error adding child"),
+            () => console.log("Successfully added child")
+        );
+        
     }
 
     getById(childId: string) {
         return this.http.get<Child>(`${this.constants.API_ENDPOINT}/child/${childId}`);
     }
 
-    // delete(id: string) {
-    //     return this.http.delete(`${this.constants.API_ENDPOINT}/child/${id}`)
-    //         .pipe(map(x => {
-    //             // auto logout if the logged in user deleted their own record
-    //             if (id == this.userId.userId) {
-    //                 this.logout();
-    //             }
-    //             return x;
-    //         }));
-    // }
+    editChild(child: Child) {
+
+    }
+
+    deleteChild(childId: string) {
+        return this.http.delete(`${this.constants.API_ENDPOINT}/child/${childId}`).subscribe(
+            res => console.log(res),
+            err => console.log("Error deleting child"),
+            () => console.log("Successfully deleted child")
+        );
+    }
 }
