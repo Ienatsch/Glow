@@ -8,10 +8,10 @@
             <a routerLink="/glow-shot-records" class="nav-item nav-link">Shot Records</a>
             <a routerLink="/glow-events" class="nav-item nav-link">Events</a>
             <div class="accountNavContainer nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <a  *ngIf="user !== null" class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Account
                 </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <div *ngIf="user !== null" class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                     <!-- <a class="dropdown-item" href="#">View</a>
                     <a class="dropdown-item" href="#">Edit</a>
                     <a class="dropdown-item" href="#">*Login/Logout*</a> -->
