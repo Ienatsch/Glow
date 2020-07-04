@@ -20,6 +20,12 @@ import { UsersModule } from 'src/app/account/users/users.module';
 import { NgbdDatepickerPopup } from 'src/app/helpers/ngbd-datepicker-popup/ngbd-datepicker-popup.component';
 import { MatIconModule } from '@angular/material/icon';
 import { AddEditChildModalComponent } from 'src/app/modals/child/add-edit-child-modal.component';
+import { ChildComponent } from 'src/app/child/child.component';
+import { ChildListComponent } from 'src/app/child/child-list/child-list.component';
+import { ChildItemComponent } from 'src/app/child/child-item/child-item.component';
+import { SleepItemComponent } from 'src/app/sleep/sleep-item/sleep-item.component';
+import { SleepListComponent } from 'src/app/sleep/sleep-list/sleep-list.component';
+import { AddSleepModalComponent } from 'src/app/modals/add-sleep-modal/add-sleep-modal.component';
 
 @NgModule({
   imports: [CommonModule, RouterModule, HttpClientModule, NgbModule, FormsModule, AccountModule, UsersModule, MatIconModule, ReactiveFormsModule],
@@ -58,7 +64,13 @@ import { AddEditChildModalComponent } from 'src/app/modals/child/add-edit-child-
     FeedingItemComponent,
     FeedingListComponent,
     NgbdDatepickerPopup,
-    AddEditChildModalComponent
+    AddEditChildModalComponent,
+    ChildComponent,
+    ChildListComponent,
+    ChildItemComponent,
+    SleepItemComponent,
+    SleepListComponent,
+    AddSleepModalComponent,
   ]
 })
 export class SharedModule {}

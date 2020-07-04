@@ -1,0 +1,11 @@
+<div class="sleepListHeader">
+    <p class="h-100 mb-0">Date</p>
+    <p class="h-100 mb-0">Time</p>
+    <p class="h-100 mb-0">Time Passed</p>
+</div>
+<div class="sleepItemList">
+    <div *ngFor="let sleep of sleepList; index as i; last as lastItem;"
+    [class.oddItems]="i % 2 === 0" [class.evenItems]="i % 2 !== 0">
+        <glow-sleep-item class="feedingItem" [sleep]="sleep" [class.lastItem]="lastItem"></glow-sleep-item>
+    </div>
+</div>

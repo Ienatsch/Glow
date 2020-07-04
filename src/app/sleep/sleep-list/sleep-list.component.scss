@@ -1,0 +1,43 @@
+@import "../../variables";
+
+.sleepItemList {
+    max-height: 75vh;
+    overflow: scroll;
+}
+
+::-webkit-scrollbar {
+    width: 0px;
+}
+
+.sleepItem, .sleepListHeader{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+
+    p {
+        width: 25%;
+        padding: 20px;
+        text-align: center;
+
+        &:not(:last-of-type) {
+            border-right: 1px solid black;
+        }
+    }
+}
+
+.sleepListHeader {
+    background-color: $mainBlue;
+    border: 1px solid black;
+}
+
+.lastItem {
+    border-bottom: 1px solid black;
+}
+
+.evenItems {
+    background-color: rgb(243, 241, 241);
+}
+
+.oddItems {
+    background-color: rgb(255, 255, 255);
+}

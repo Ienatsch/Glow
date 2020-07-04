@@ -1,0 +1,5 @@
+<p class="sleepCol p-3 mb-0 shadow-sm">{{ sleep.sleepDate }}</p>
+<p class="sleepCol p-3 mb-0 shadow-sm">{{ sleep.sleepStartTime }} - {{ sleep.sleepEndTime }}</p>
+<p class="sleepCol p-3 mb-0 shadow-sm">{{ sleep.timeSinceLastSleep }}</p>
+
+<button class="delete" type="button" (click)="deleteSleep(sleep.sleepId)">X</button>

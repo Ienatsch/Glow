@@ -1,0 +1,22 @@
+.sleepCol {
+    width: 25%;
+    text-align: center;
+
+    &:first-of-type {
+        border-left: 1px solid black;
+    }
+
+    &:last-of-type {
+        border-right: 1px solid black;
+    }
+
+    &:not(:last-of-type) {
+        border-right: 1px solid black;
+    }
+}
+
+.delete {
+    width: 40px;
+    margin-left: -40px;
+    background-color: red;
+}
