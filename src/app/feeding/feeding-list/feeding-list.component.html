@@ -5,7 +5,7 @@
     <p class="h-100 mb-0">Time Passed</p>
 </div>
 <div class="feedingItemList">
-    <div *ngFor="let feeding of feedings; index as i; last as lastItem;"
+    <div *ngFor="let feeding of feedingList; index as i; last as lastItem;"
     [class.oddItems]="i % 2 === 0" [class.evenItems]="i % 2 !== 0">
         <glow-feeding-item class="feedingItem" [feeding]="feeding" [class.lastItem]="lastItem"></glow-feeding-item>
     </div>

@@ -2,3 +2,5 @@
 <p>{{ child.childBirthDate }}</p>
 <p>{{ child.childHeight }} {{ child.childHeightType }}</p>
 <p>{{ child.childWeight }} {{ child.childWeightType }}</p>
+<button type="button" class="btn btn-primary" (click)="editChild(child)">Edit</button>
+<button type="button" class="btn btn-danger" (click)="deleteChild(child.childId)">Delete</button>

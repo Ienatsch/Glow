@@ -14,7 +14,7 @@ export class ChildListComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.childService.getAllByUser().subscribe((children: Child[]) => this.children = children);
+    // this.childService.getAllByUser().subscribe((children: Child[]) => this.children = children);
   }
 
 }

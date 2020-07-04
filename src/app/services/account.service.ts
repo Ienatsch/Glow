@@ -5,12 +5,15 @@ import { BehaviorSubject, Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { User } from '../models/user.model';
 import { Constants } from '../../config/constants';
+import { Child } from '../models/child.model';
+import { ChildService } from './child.service';
 
 @Injectable({ providedIn: 'root' })
 export class AccountService {
     private userSubject: BehaviorSubject<User>;
     public user: Observable<User>;
     public constants: Constants;
+    public child: Child;
 
     constructor(private router: Router, private http: HttpClient) {
         this.userSubject = new BehaviorSubject<User>(JSON.parse(localStorage.getItem('user')));

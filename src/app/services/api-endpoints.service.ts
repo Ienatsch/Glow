@@ -61,4 +61,8 @@ export class ApiEndpointsService {
   public getUserEndpoint(): string {
     return this.createUrl('user');
   }
+
+  public getFeedingEndpoint(): string {
+    return this.createUrl('feeding');
+  }
 }

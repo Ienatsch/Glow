@@ -1,5 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Feeding } from '../../models/feeding.model';
+import { FeedingService } from 'src/app/services/feeding.service';
+import { ChildService } from 'src/app/services/child.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'glow-feeding-list',
@@ -8,13 +11,17 @@ import { Feeding } from '../../models/feeding.model';
 })
 export class FeedingListComponent implements OnInit {
 
-  feedings: Feeding[] = [
-    
-  ]
+  @Input() childId: string;
+  feedingList: Feeding[] = [];
+  subscription: Subscription;
 
-  constructor() { }
+  constructor(private feedingService: FeedingService, childService: ChildService) {
+    this.feedingList = feedingService.feedingList;
+   }
 
   ngOnInit(): void {
+    this.subscription = this.feedingService.feedingListChangedEvent.subscribe((feedingList: Feeding[]) => {
+      this.feedingList = feedingList;
+    })
   }
-
 }

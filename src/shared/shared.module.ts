@@ -28,6 +28,8 @@ import { AddEditChildModalComponent } from 'src/app/modals/child/add-edit-child-
     RouterModule,
     HttpClientModule,
     HeaderComponent,
+    AccountModule,
+    UsersModule,
     FeedingComponent,
     SleepComponent,
     ShotRecordsComponent,
@@ -38,8 +40,6 @@ import { AddEditChildModalComponent } from 'src/app/modals/child/add-edit-child-
     EditFeedingModalComponent,
     FeedingItemComponent,
     FeedingListComponent,
-    AccountModule,
-    UsersModule,
     NgbdDatepickerPopup,
     MatIconModule,
     AddEditChildModalComponent

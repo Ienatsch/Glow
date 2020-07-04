@@ -17,7 +17,7 @@ export class ChildService {
 
     getAllByUser() {
         var userId = this.accountService.userValue.userId;
-        return this.http.get<Child[]>(`${this.constants.API_ENDPOINT}/child/${userId}`);
+        return this.http.get<Child[]>(`${this.constants.API_ENDPOINT}/child/${userId}`).toPromise();
     }
 
     addChild(child: Child) {
