@@ -19,6 +19,7 @@ export class AddFeedingModalComponent {
   ozFed: string;
   meridian = true;
   closeResult: string;
+  inputDisabled = false;
 
   constructor(private modalService: NgbModal, private feedingService: FeedingService, private childService: ChildService) {
    }
@@ -45,6 +46,10 @@ export class AddFeedingModalComponent {
 
   saveFeedingModal(feeding: Feeding) {
     this.feedingService.addFeeding(feeding);
+  }
+
+  toggleInput() {
+    this.inputDisabled = !this.inputDisabled;
   }
 
 }
